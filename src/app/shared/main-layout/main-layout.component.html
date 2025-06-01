@@ -1,0 +1,33 @@
+<mat-sidenav-container class="main-layout-container">
+  <mat-sidenav
+    #drawer
+    mode="side"
+    [(opened)]="sidebarOpened"
+    class="sidenav"
+    [class.mat-drawer-closed]="!sidebarOpened"
+  >
+    <app-navbar (navItemClicked)="closeSidebar()"></app-navbar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <app-header></app-header>
+
+    <button
+      mat-icon-button
+      class="toggle-button"
+      (click)="toggleSidebar()"
+      [ngClass]="{ collapsed: !sidebarOpened }"
+      aria-label="Toggle Sidebar"
+    >
+      <mat-icon>{{
+        sidebarOpened ? "chevron_left" : "chevron_right"
+      }}</mat-icon>
+    </button>
+
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

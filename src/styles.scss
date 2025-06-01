@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+
+$primary: mat.define-palette(mat.$green-palette, 600, 300, 900);
+$accent: mat.define-palette(mat.$grey-palette, 600);
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent
+  )
+));
+
+@include mat.all-component-themes($theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-snackbar {
+  margin-top: 70px !important;
+  margin-bottom: 20px !important;
+}
+
+.no-default-style .mdc-snackbar__surface  {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}

@@ -1,0 +1,158 @@
+{
+  "books": [
+    {
+      "id": "2",
+      "title": "Mastering Angular",
+      "authorId": "a102",
+      "publishedDate": "2023-02-15",
+      "stock": 4,
+      "authorName": "Jane Doe"
+    },
+    {
+      "id": "4",
+      "title": "NgRx Made Easy",
+      "authorId": "a103",
+      "publishedDate": "2023-04-05",
+      "stock": 10
+    },
+    {
+      "id": "5",
+      "title": "Angular Forms",
+      "authorId": "a104",
+      "publishedDate": "2023-05-20",
+      "stock": 10
+    },
+    {
+      "id": "93b2",
+      "title": "Java Enterprise",
+      "authorId": "a105",
+      "publishedDate": "2003-05-03",
+      "stock": 10
+    },
+    {
+      "id": "e55c",
+      "title": "Python Basics",
+      "authorId": "a107",
+      "publishedDate": "2001-05-03",
+      "stock": 8
+    },
+    {
+      "id": "297b",
+      "title": "Linux A to Z",
+      "authorId": "a108",
+      "publishedDate": "2006-12-02",
+      "stock": 12
+    },
+    {
+      "id": "df38",
+      "title": "Python Advanced",
+      "authorId": null,
+      "publishedDate": "2000-04-12",
+      "stock": 11
+    },
+    {
+      "id": "b6af",
+      "title": "Python Advanced",
+      "authorId": "a102",
+      "publishedDate": "2008-10-20",
+      "stock": 10
+    },
+    {
+      "id": "33eb",
+      "title": "System Designs",
+      "authorId": "a108",
+      "publishedDate": "2007-01-30",
+      "stock": 8
+    },
+    {
+      "id": "a3ca",
+      "title": "Fok",
+      "authorId": "a104",
+      "publishedDate": "2009-12-21",
+      "stock": 7
+    },
+    {
+      "id": "ac47",
+      "title": "Foktop",
+      "authorId": "a103",
+      "publishedDate": "2009-12-21",
+      "stock": 34
+    }
+  ],
+  "authors": [
+    {
+      "name": "John Lewd",
+      "bio": "Tech writer and educator on Angular and front-end frameworks.",
+      "id": "a101"
+    },
+    {
+      "id": "a102",
+      "name": "Jane Doe",
+      "bio": "Experienced Angular developer and author of multiple SPA books."
+    },
+    {
+      "name": "Ada Lovelace",
+      "bio": "Pioneer in computing, modern take on state management in Angular.",
+      "id": "a103"
+    },
+    {
+      "id": "a104",
+      "name": "Grace Hopper",
+      "bio": "Focused on Angular forms and reactive programming."
+    },
+    {
+      "id": "a105",
+      "name": "D' Manor",
+      "bio": "Java and backend microservices expert."
+    },
+    {
+      "id": "a107",
+      "name": "John L Cooper",
+      "bio": "Python developer and technical trainer."
+    },
+    {
+      "id": "a108",
+      "name": "Liam Campbell",
+      "bio": "Linux administrator and author of several sysadmin books."
+    },
+    {
+      "id": "7afb",
+      "name": "Dwayne D'Mello",
+      "bio": "This is the best selling Author for Python courses."
+    },
+    {
+      "id": "2ff0",
+      "name": "Demo Author",
+      "bio": "This Author can be Deleted."
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Super",
+      "email": "super@abc.com",
+      "username": "Super",
+      "password": "super",
+      "role": "superadmin",
+      "token": "super-token"
+    },
+    {
+      "name": "Sales",
+      "email": "sales@abc.com",
+      "username": "Sales",
+      "password": "sales",
+      "role": "sales",
+      "token": "sales-token",
+      "id": "b20a"
+    },
+    {
+      "id": "0107",
+      "name": "Admin",
+      "email": "admin@abc.com",
+      "username": "Admin",
+      "password": "admin",
+      "role": "admin",
+      "token": "admin-token"
+    }
+  ]
+}

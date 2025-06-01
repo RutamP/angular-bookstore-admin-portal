@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <span class="app-title">📚 Angular Bookstore Admin</span>
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="isLoggedIn">
+    <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+      <!-- Container for emoji and username -->
+      <div class="user-content">
+        <span class="user-emoji">👤</span>
+        <span class="username">{{ username }}</span>
+      </div>
+      <mat-icon class="dropdown-icon">arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item (click)="openEditUserDialog()">Edit Details</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </ng-container>
+</mat-toolbar>

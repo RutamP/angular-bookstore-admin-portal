@@ -1,0 +1,131 @@
+<div class="dashboard-wrapper">
+  <div class="dashboard-container">
+    <div class="welcome-container">
+      <div class="welcome-message">
+        Welcome, <strong>{{ userName }}</strong
+        >! You are logged in as <em>{{ userRole }}</em
+        >.
+      </div>
+    </div>
+
+    <div class="stats-container">
+      <div class="stats-card" *ngIf="roleService.hasAccessToBooks()">
+        <mat-card>
+          <mat-card-title>Books</mat-card-title>
+          <mat-card-content>
+            <div class="card-description">
+              Manage and track all books available in the system.
+            </div>
+            <div class="total-count">
+              <span class="count-label">Total Count:</span>
+              <h2>{{ bookCount }}</h2>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="button-actions">
+              <button mat-button color="primary" routerLink="/books">
+                Manage Books
+              </button>
+              <button
+                mat-raised-button
+                color="accent"
+                (click)="openAddBookDialog()"
+              >
+                + Add Book
+              </button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <div class="stats-card" *ngIf="roleService.hasAccessToAuthors()">
+        <mat-card>
+          <mat-card-title>Authors</mat-card-title>
+          <mat-card-content>
+            <div class="card-description">
+              View and manage authors who contribute books to the system.
+            </div>
+            <div class="total-count">
+              <span class="count-label">Total Count:</span>
+              <h2>{{ authorCount }}</h2>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="button-actions">
+              <button mat-button color="primary" routerLink="/authors">
+                Manage Authors
+              </button>
+              <button
+                mat-raised-button
+                color="accent"
+                (click)="openAddAuthorDialog()"
+              >
+                + Add Author
+              </button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <div class="stats-card" *ngIf="roleService.hasAccessToUsers()">
+        <mat-card>
+          <mat-card-title>Users</mat-card-title>
+          <mat-card-content>
+            <div class="card-description">
+              Oversee user accounts and manage system access.
+            </div>
+            <div class="total-count">
+              <span class="count-label">Total Count:</span>
+              <h2>{{ userCount }}</h2>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="button-actions">
+              <button mat-button color="primary" routerLink="/users">
+                Manage Users
+              </button>
+              <button
+                mat-raised-button
+                color="accent"
+                (click)="openAddUserDialog()"
+              >
+                + Add User
+              </button>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div
+        class="chart-container"
+        [style.flex]="!isSalesUser ? '1 1 500px' : '1 1 100%'"
+      >
+        <h3>Bookstore Statistics</h3>
+        <div class="chart-card">
+          <canvas
+            baseChart
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [type]="barChartType"
+            class="bar-chart-canvas"
+          ></canvas>
+        </div>
+      </div>
+
+      <div class="chart-container" *ngIf="!isSalesUser">
+        <h3>User Role Distribution</h3>
+        <div class="chart-card">
+          <canvas
+            baseChart
+            [data]="pieChartData"
+            [options]="pieChartOptions"
+            [type]="pieChartType"
+            class="pie-chart-canvas"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

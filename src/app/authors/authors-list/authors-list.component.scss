@@ -1,0 +1,31 @@
+mat-card {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.search-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.add-author-container {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+
+  .mat-header-cell {
+    font-weight: 600;
+    background-color: #f5f5f5;
+  }
+
+  .author-row.hovered {
+    background-color: #f5f5f5;
+    transform: scale(1.01);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+  }
+}

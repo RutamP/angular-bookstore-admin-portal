@@ -1,0 +1,58 @@
+<mat-card>
+  <h2>Authors</h2>
+
+  <div class="add-author-container">
+    <button mat-raised-button color="primary" (click)="openDialog()">
+      <mat-icon>add</mat-icon> Add Author
+    </button>
+  </div>
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Filter authors..."
+    />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let author">{{ author.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bio">
+      <th mat-header-cell *matHeaderCellDef>Bio</th>
+      <td mat-cell *matCellDef="let author">{{ author.bio }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let author">
+        <button mat-icon-button color="accent" (click)="openDialog(author)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteAuthor(author.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      class="author-row"
+      [class.hovered]="hoveredRow === row.id"
+      (mouseenter)="hoveredRow = row.id"
+      (mouseleave)="hoveredRow = null"
+    ></tr>
+  </table>
+
+  <mat-paginator
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>

@@ -1,0 +1,7 @@
+<div class="snackbar-container" [ngClass]="data.panelClass">
+  <div class="snackbar-content">
+    <span class="message">{{ data.message }}</span>
+    <button class="close-btn" (click)="data.snackBarRef.dismiss()">×</button>
+  </div>
+  <div class="progress-bar"></div>
+</div>

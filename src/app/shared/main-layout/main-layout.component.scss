@@ -1,0 +1,48 @@
+.main-layout-container {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.sidenav {
+  width: 240px;
+  transition: width 0.3s ease;
+  background-color: #43a047;
+
+  &.mat-drawer-closed {
+    width: 60px !important;
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  z-index: 1000;
+  background-color: #43a047;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  padding: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+
+  &.collapsed {
+    left: 0;
+  }
+
+  &:not(.collapsed) {
+    left: 240px;
+  }
+}
+
+.content-area {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+}

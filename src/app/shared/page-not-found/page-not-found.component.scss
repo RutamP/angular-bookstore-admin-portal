@@ -1,0 +1,32 @@
+.page-not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 89vh;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  color: #fa5c5c;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
