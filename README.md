@@ -37,7 +37,7 @@ Username: Admin
 Password: admin
 ```
 
-### Super Admin
+### Sales
 
 ```
 Username: Sales
